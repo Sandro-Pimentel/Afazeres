@@ -13,7 +13,7 @@
 
 .main_container {
     display: grid;
-    grid-template-columns: auto, auto;
+    grid-template-columns: auto auto;
     gap: 10px;
 }
 
