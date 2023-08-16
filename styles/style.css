@@ -43,6 +43,17 @@
 
 }
 
+.main_container_block_btn {
+    background-color: red;
+    color: black;
+    height: 100%;
+    width: 10%;
+    border-style: solid;
+    border-color: rgb(51, 0, 0);
+    border-radius: 50px;
+}
+
+
 .main_container_block_status1 {
     color: greenyellow;
     text-shadow: 0 0 5px yellow,
