@@ -27,6 +27,7 @@
 .main_container_block {
     display: flex; 
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     border-width: 3px;
     border-style: solid;
@@ -44,13 +45,17 @@
 }
 
 .main_container_block_btn {
-    background-color: red;
-    color: black;
+    background-image: linear-gradient(rgb(0, 16, 109), rgb(0, 11, 71));
+    color: white;
     height: 100%;
-    width: 10%;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0 5px rgb(131, 255, 255);
     border-style: solid;
-    border-color: rgb(51, 0, 0);
-    border-radius: 50px;
+    border-width: 0;
+    border-radius: 3.125rem;
+    font-size: 2rem;
 }
 
 
