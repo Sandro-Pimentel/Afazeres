@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=Rubik:wght@300&display=swap');
 
 .body {
-    background-color: rgb(0, 11, 71);
+    background-color: rgb(17, 21, 46);
     color: white;
     font-family: 'Rubik', sans-serif;
 }
@@ -47,6 +47,7 @@
 .main_container_block_btn {
     background-image: linear-gradient(rgb(0, 16, 109), rgb(0, 11, 71));
     color: white;
+    cursor: pointer;
     height: 100%;
     padding: 0;
     width: 3rem;
@@ -58,16 +59,23 @@
     font-size: 2rem;
 }
 
+.main_container_block_btn:hover {
+    background-image: linear-gradient(rgb(56, 188, 211), rgb(44, 157, 177));
+}
+
 
 .main_container_block_status1 {
     color: greenyellow;
+    cursor: pointer;
     text-shadow: 0 0 5px yellow,
                  0 0 10px greenyellow,
                  0 0 15px green;
+    
 }
 
 .main_container_block_status2 {
     color: rgb(195, 248, 255);
+    cursor: pointer;
     text-shadow: 0 0 5px cyan,
                  0 0 7px rgb(0, 162, 255),
                  0 0 10px rgb(0, 60, 255);
