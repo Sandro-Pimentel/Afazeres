@@ -10,12 +10,17 @@
         <main class="main">
             <h1 class="main_title"> Meus afazeres </h1>
             <section class="main_choice">
-                <input type="text" class="main_choice_text"> 
-                <input type="radio" name="stats" id="stats_choice1" class="main_choice_stats">
-                <input type="radio" name="stats" id="stats_choice2" class="main_choice_stats">
+                <input type="text" class="main_choice_input" id="input">
+                <section>
+                    <input type="radio" name="stats" id="stats_choice1" class="main_choice_stats">
+                    <p class="main_choice_txt"> Completo </p>
+                    <input type="radio" name="stats" id="stats_choice2" class="main_choice_stats">
+                    <p class="main_choice_txt"> Não Completo </p>
+                </section>
+                <input type="button" value="+" class="main_choice_btn" id="btnAdd">
             </section>
-            <section class="main_container">
-                <section class="main_container_block">
+            <section class="main_container" id="container">
+                <section class="main_container_block" id="base">
                     <section class="main_container_block_content">
                         <p class="main_container_block_text"> Faça 25 chutes em partidas online durante o evento Champions Road 2023  </p>
                         <p class="main_container_block_status2" id="stats"> EM ANDAMENTO </p>
