@@ -27,7 +27,7 @@ stats.forEach((e) => e.addEventListener("click", () => {
 
 const estruturaCodigo = (pai, tag, classe) => {
     const comando = document.createElement(tag);
-    comando.classList.add(classe)
+    comando.className = classe
     pai.appendChild(comando)
 }
 
@@ -35,9 +35,21 @@ btnAdd.addEventListener("click", () => {
     const texto = caixaTexto.value;
     const container = document.querySelector("#container");
     estruturaCodigo(container, "section", "main_container_block")
-    estruturaCodigo(, "p", "main_container_block_text")
-    estruturaCodigo(, "p", "main_container_block_status2")
-    estruturaCodigo()
+    const sec = document.querySelectorAll(".main_container_block")
+    const section = sec[(sec.length)-1]
+    estruturaCodigo(section, "section", "main_container_block_content")
+    const sec2 = document.querySelectorAll(".main_container_block_content")
+    const section2 = sec2[(sec.length)-1]
+    estruturaCodigo(section2, "p", "main_container_block_text")
+    estruturaCodigo(section2, "p", "main_container_block_status2")
+    const button = document.createElement("input")
+    button.type = "button"
+    button.value = "-"
+    button.className = "main_container_block_btn"
+    button.id = "btn"
+    estruturaCodigo(section, "input", "main_container_block_btn")
+    const boxes = document.querySelectorAll(".main_container_block_text")
+    boxes[(boxes.length)-1].innerHTML = texto
 })
 
 
