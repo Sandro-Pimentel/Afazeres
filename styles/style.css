@@ -75,14 +75,15 @@
 .main_container {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 1.5rem;
+    gap: 3rem;
+    align-self: center;
 }
 
 .main_container_block {
     display: flex; 
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-width: 3px;
     border-style: solid;
     border-radius: 2px;
