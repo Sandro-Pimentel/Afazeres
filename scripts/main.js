@@ -1,5 +1,5 @@
-const botoes = document.querySelectorAll("#btn");
-const stats = document.querySelectorAll("#stats");
+let botoes = document.querySelectorAll("#btn");
+let stats = document.querySelectorAll("#stats");
 const btnAdd = document.querySelector("#btnAdd");
 const caixaTexto = document.querySelector("#input");
 const btnComp = document.querySelector("#stats_choice1");
@@ -8,12 +8,14 @@ const c = "✔ COMPLETADO";
 const a = "EM ANDAMENTO";
 const container = document.querySelector("#container");
 
-botoes.forEach((e) => e.addEventListener("click", () => {
+const tira = () => botoes.forEach((e) => e.addEventListener("click", () => {
     pai = e.parentElement
     pai.remove()
 }))
 
-stats.forEach((e) => e.addEventListener("click", () => {
+tira()
+
+const mudaStatus = () => stats.forEach((e) => e.addEventListener("click", () => {
     const lista = e.classList;
     if(lista == "main_container_block_status2"){
         lista.remove("main_container_block_status2")
@@ -25,6 +27,8 @@ stats.forEach((e) => e.addEventListener("click", () => {
         e.innerHTML = a
     }
 }))
+
+mudaStatus()
 
 const estruturaCodigo = (pai, tag, classe) => {
     const comando = document.createElement(tag);
@@ -64,26 +68,22 @@ btnAdd.addEventListener("click", () => {
         p.className = "main_container_block_status1"
         section2.appendChild(p)
         p.innerHTML = c
-        console.log(btnComp.checked)
+        btnComp.checked = false
     } else {
         const p = document.createElement("p")
         p.id = "stats"
         p.className = "main_container_block_status2"
         section2.appendChild(p)
         p.innerHTML = a
-        console.log(btnComp.checked)
+        btnAnd.checked = false
     }
     section.appendChild(criaBtn())
+
+    botoes = document.querySelectorAll("#btn")
+    stats = document.querySelectorAll("#stats")
+
+    tira()
+    mudaStatus()
+
+    caixaTexto.value = ""
 })
-
-
-
-
-
-/* <section class="main_container_block">
-<section class="main_container_block_content">
-<p class="main_container_block_text"> Faça 25 chutes em partidas online durante o evento Champions Road 2023  </p>
-<p class="main_container_block_status2" id="stats"> EM ANDAMENTO </p>
-</section>
-<input type="button" value="-" class="main_container_block_btn" id="btn">
-</section> */

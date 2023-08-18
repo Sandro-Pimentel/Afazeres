@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=Rubik:wght@300&display=swap');
 
 .body {
-    background-color: rgb(17, 21, 46);
+    background-image: linear-gradient(to top right, #080f21, #0b0f22);
     color: white;
+    font-size: 1.1rem;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -84,11 +85,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-width: 3px;
-    border-style: solid;
     border-radius: 2px;
-    background-color: rgb(62, 134, 146);
+    background-image: linear-gradient(to bottom right, #23669b, #09304f);
     padding: 2%;
+    width: 30rem;
 }
 
 .main_container_block_content {
@@ -96,7 +96,8 @@
 }
 
 .main_container_block_text {
-
+    color: #9ee2ff;
+    text-shadow: 0 0 4px white;
 }
 
 .main_container_block_btn {
