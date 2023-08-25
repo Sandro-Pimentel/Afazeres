@@ -54,6 +54,14 @@
     
 }
 
+.main_choice_txt1 {
+    color: greenyellow;
+}
+
+.main_choice_txt2 {
+    color: cyan;
+}
+
 .main_choice_btn {
     background-image: linear-gradient(rgb(0, 16, 109), rgb(0, 11, 71));
     color: white;
