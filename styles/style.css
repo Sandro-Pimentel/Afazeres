@@ -54,8 +54,12 @@
     
 }
 
-.main_choice_txt {
-    
+.main_choice_txt1 {
+    color: greenyellow;
+}
+
+.main_choice_txt2 {
+    color: cyan;
 }
 
 .main_choice_btn {

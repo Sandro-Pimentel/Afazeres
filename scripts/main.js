@@ -3,7 +3,9 @@ const stats = document.querySelectorAll("#stats");
 const btnAdd = document.querySelector("#btnAdd");
 const caixaTexto = document.querySelector("#input");
 const btnComp = document.querySelector("#stats_choice1");
+const txtBtnComp = btnComp.parentElement.children[1];
 const btnAnd = document.querySelector("#stats_choice2");
+const txtBtnAnd = btnAnd.parentElement.children[3];
 const c = "✔ COMPLETADO";
 const a = "EM ANDAMENTO";
 const container = document.querySelector("#container");
@@ -18,6 +20,20 @@ const mudaStatus = () => stats.forEach((e) => clickMuda(e))
 
 tira()
 mudaStatus()
+
+btnComp.addEventListener("click", () => {
+    if(btnComp.checked === true){
+        txtBtnComp.className = "main_choice_txt1"
+        txtBtnAnd.className = ""
+    }
+})
+
+btnAnd.addEventListener("click", () => {
+    if(btnAnd.checked === true){
+        txtBtnAnd.className = "main_choice_txt2"
+        txtBtnComp.className = ""
+    }
+})
 
 btnAdd.addEventListener("click", () => {
     criaTudo()
@@ -118,8 +134,7 @@ function clickMuda(e) {
     } else {
         e.className = "main_container_block_status2"
         e.innerHTML = a
-    }
-    })
+    }})
 }
 
 function criaBtn() {
