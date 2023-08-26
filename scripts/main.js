@@ -3,17 +3,19 @@ const stats = document.querySelectorAll("#stats");
 const btnAdd = document.querySelector("#btnAdd");
 const caixaTexto = document.querySelector("#input");
 const btnComp = document.querySelector("#stats_choice1");
-const txtBtnComp = btnComp.parentElement.children[1];
+const txtBtnComp = btnComp.parentElement.parentElement.children[1].children[1];
 const btnAnd = document.querySelector("#stats_choice2");
-const txtBtnAnd = btnAnd.parentElement.children[3];
+const txtBtnAnd = btnAnd.parentElement.parentElement.children[2].children[1];
 const c = "✔ COMPLETADO";
 const a = "EM ANDAMENTO";
 const container = document.querySelector("#container");
 let itens = JSON.parse(localStorage.getItem("itens")) || [];
 
-criaTudoNovamente()
+if(itens.length > 0){
+    criaTudoNovamente()
+    itens.forEach(() => criaTudo())
+}
 
-itens.forEach(() => criaTudo())
 
 const tira = () =>  botoes.forEach((e) => clickTira(e))
 const mudaStatus = () => stats.forEach((e) => clickMuda(e))
@@ -38,6 +40,8 @@ btnAnd.addEventListener("click", () => {
 btnAdd.addEventListener("click", () => {
     criaTudo()
     caixaTexto.value = ""
+    txtBtnAnd.className = ""
+    txtBtnComp.className = ""
 })
 
 function criaTudo() {
@@ -74,10 +78,10 @@ function criaTudo() {
         }
         const botao = criaBtn()
         section.appendChild(botao)
-
-        clickTira(botao)
-
+        
         itens.push(objAtual)
+        
+        clickTira(botao)
 
         localStorage.setItem("itens", JSON.stringify(itens))
 }}
@@ -156,20 +160,43 @@ function clickTira(e){
     e.addEventListener("click", () => {
         pai = e.parentElement
         pai.remove()
+        
+        let lista = document.querySelectorAll(".main_container_block");
 
-        const x = itens.slice(0, parseInt(pai.dataset.id)) || itens
-        const y = itens.slice(parseInt(pai.dataset.id) + 1) || []
+        let x = itens
+        let y = []
+        
+        if(x.length > 1){
+            x = itens.slice(0, parseInt(pai.dataset.id) + 1)
+            x.pop()
+            y = itens.slice(parseInt(pai.dataset.id) + 1)
+            console.log("if")
+            console.log(x)
+            console.log(y)
+        }
+
 
         if(itens.length > 2 && x.length !== 0 && y.length !== 0){
             localStorage.setItem("itens", JSON.stringify(x.concat(y)))
+            console.log(1)
         } else if(y.length < 1 && itens.length > 1){
-            localStorage.setItem("itens", JSON.stringify(itens[0]))
+            localStorage.setItem("itens", JSON.stringify(x))
+            console.log(2)
         } else if(x.length < 1 && itens.length > 1){
-            localStorage.setItem("itens", JSON.stringify([itens[itens.length-1]]))
+            localStorage.setItem("itens", JSON.stringify(y))
+            console.log(3)
         } else {
             localStorage.setItem("itens", "[]")
+            console.log(4)
         }
-
+        
         itens = JSON.parse(localStorage.getItem("itens"));
+        
+
+        if(itens.length > 0){
+            lista.forEach((e, i) => e.dataset.id = i)
+            itens.forEach((e, i) => e.id = i)
+            localStorage.setItem("itens", JSON.stringify(itens))
+        }
     })
 }
