@@ -128,13 +128,19 @@ function estruturaCodigo(pai, tag, classe) {
 
 function clickMuda(e) {
     e.addEventListener("click", () => {
+    const idBloco = e.parentElement.parentElement.dataset.id;
     if(e.className == "main_container_block_status2"){
         e.className = "main_container_block_status1"
         e.innerHTML = c
+        itens[idBloco].completo = true
     } else {
         e.className = "main_container_block_status2"
         e.innerHTML = a
-    }})
+        itens[idBloco].completo = false
+    }
+
+    localStorage.setItem("itens", JSON.stringify(itens))
+})
 }
 
 function criaBtn() {
