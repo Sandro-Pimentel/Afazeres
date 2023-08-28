@@ -23,6 +23,15 @@ const mudaStatus = () => stats.forEach((e) => clickMuda(e))
 tira()
 mudaStatus()
 
+caixaTexto.addEventListener("keydown", (e) => {
+    if(e.key === "Enter"){
+        criaTudo()
+        caixaTexto.value = ""
+        txtBtnAnd.className = ""
+        txtBtnComp.className = ""
+    }
+})
+
 btnComp.addEventListener("click", () => {
     if(btnComp.checked === true){
         txtBtnComp.className = "main_choice_txt1"
