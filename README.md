@@ -8,3 +8,7 @@ O projeto utiliza do localStorage do navegador para guardar os afazeres que o us
 - Adição de afazeres(nome e status)
 - Alteração de status(em andamento e concluido) do afazer anteriormente criado
 - Remoção de afazer indesejado
+
+## Site Rodando
+Para acessar o site em funcionamento utilize o link abaixo:
+- https://afazeres-sand.vercel.app/
