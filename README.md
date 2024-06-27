@@ -11,4 +11,7 @@ O projeto utiliza do localStorage do navegador para guardar os afazeres que o us
 
 ## Site Rodando
 Para acessar o site em funcionamento utilize o link abaixo:
-- https://afazeres-sand.vercel.app/
+
+  <a href="https://afazeres-sand.vercel.app/">
+      <img src="./powered-by-vercel.svg"/>
+  </a>
